@@ -29,480 +29,511 @@
     };
     </script>
     <style>
-    :root {
-    --glass-bg: rgba(255, 255, 255, 0.05);
-    --glass-border: rgba(255, 255, 255, 0.1);
-    --glass-blur: blur(20px);
-    --neon-primary: #0266FF;
-    --neon-secondary: #8400b6;
-    --neon-glow: 0 0 10px var(--neon-primary),
-    0 0 20px var(--neon-primary),
-    0 0 30px var(--neon-primary);
-    }
-    #particles-js {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    }
-    .futuristic-border {
-    position: relative;
-    overflow: hidden;
-    }
-    .futuristic-border::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: linear-gradient(45deg, var(--neon-primary), var(--neon-secondary));
-    z-index: -1;
-    animation: borderRotate 4s linear infinite;
-    border-radius: inherit;
-    }
-    @keyframes borderRotate {
-    0% {
-    background-position: 0% 0%;
-    }
-    100% {
-    background-position: 200% 200%;
-    }
-    }
-    .message-content {
-    position: relative;
-    overflow: hidden;
-    }
-    .message-content::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg,
-    transparent,
-    rgba(255, 255, 255, 0.1),
-    transparent
-    );
-    transform: translateX(-100%);
-    animation: shimmer 3s infinite;
-    }
-    @keyframes shimmer {
-    100% {
-    transform: translateX(100%);
-    }
-    }
-    .cyber-button {
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    }
-    .cyber-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-    );
-    transition: 0.5s;
-    }
-    .cyber-button:hover::before {
-    left: 100%;
-    }
-    .matrix-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -2;
-    opacity: 0.1;
-    }
+        :root {--glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --glass-blur: blur(20px);
+            --neon-primary: #0266FF;
+            --neon-secondary: #8400b6;
+            --neon-glow: 0 0 10px var(--neon-primary),
+            0 0 20px var(--neon-primary),
+            0 0 30px var(--neon-primary);
+        }
+        #particles-js{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        .futuristic-border {
+            position: relative;
+            overflow: hidden;
+        }
+        .futuristic-border::before {
+            content: '';
+            /* position: absolute; */
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(120deg, var(--neon-primary), var(--neon-secondary));
+            z-index: -1;
+            animation: borderRotate 10s linear infinite;
+            border-radius: inherit;
+        }
+        @keyframes borderRotate {
+            0% {
+                background-position: 0% 0%;
+            }
+            100% {
+                background-position: 200% 200%;
+            }
+        }
+
+        .message-content {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .message-content::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: translateX(-100%);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        .cyber-button {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .cyber-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient( 90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .cyber-button:hover::before {
+            left: 100%;
+        }
+        .matrix-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -2;
+        opacity: 0.1;
+        }
     </style>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-    href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
-    rel="stylesheet"
-    />
-    <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet"
-    />
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" />
+    
     <style>
-    :where([class^="ri-"])::before { content: "\f3c2"; }
-    body {
-    font-family: 'Inter', sans-serif;
-    height: 100vh;
-    overflow: hidden;
-    background: linear-gradient(135deg, #1a0b24, #0d0521);
-    color: white;
-    }
-    .chat-container {
-    max-width: 1200px;
-    height: 100vh;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    background: var(--glass-bg);
-    backdrop-filter: var(--glass-blur);
-    -webkit-backdrop-filter: var(--glass-blur);
-    border: 1px solid var(--glass-border);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2),
-    inset 0 0 2px rgba(255, 255, 255, 0.1);
-    }
-    .message-container {
-    overflow-y: auto;
-    padding: 1.5rem;
-    flex-grow: 1;
-    scroll-behavior: smooth;
-    }
-    .message {
-    max-width: 70%;
-    margin-bottom: 1rem;
-    animation-duration: 0.3s;
-    animation-timing-function: ease-out;
-    animation-fill-mode: both;
-    transform-origin: bottom;
-    opacity: 0;
-    }
-    .message-user {
-    margin-left: auto;
-    animation-name: messageInUser;
-    }
-    .message-bot {
-    margin-right: auto;
-    animation-name: messageInBot;
-    }
-    @keyframes messageInUser {
-    from {
-    opacity: 0;
-    transform: translateY(20px) scale(0.95);
-    }
-    to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-    }
-    }
-    @keyframes messageInBot {
-    from {
-    opacity: 0;
-    transform: translateY(20px) scale(0.95);
-    }
-    to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-    }
-    }
-    .message-content {
-    padding: 0.75rem 1rem;
-    border-radius: 1rem;
-    transition: all 0.3s ease;
-    backdrop-filter: var(--glass-blur);
-    -webkit-backdrop-filter: var(--glass-blur);
-    border: 2px solid rgba(167, 139, 250, 0.5);
-    box-shadow: inset 0 0 4px rgba(167, 139, 250, 0.4),
-    0 0 15px rgba(99, 102, 241, 0.3),
-    0 0 30px rgba(99, 102, 241, 0.1);
-    }
-    .message-content:hover {
-    transform: scale(1.02);
-    box-shadow: 0 0 15px rgba(79, 70, 229, 0.2);
-    }
-    .message-user .message-content {
-    background: rgba(2, 102, 255, 0.25);
-    color: white;
-    border-bottom-right-radius: 0.25rem;
-    box-shadow: 0 4px 20px rgba(2, 102, 255, 0.3),
-    0 0 40px rgba(2, 102, 255, 0.1);
-    border: 2px solid rgba(2, 102, 255, 0.4);
-    backdrop-filter: blur(8px);
-    }
-    .message-bot .message-content {
-    background: rgba(132, 0, 182, 0.2);
-    color: white;
-    border-bottom-left-radius: 0.25rem;
-    box-shadow: 0 4px 20px rgba(132, 0, 182, 0.25),
-    0 0 40px rgba(132, 0, 182, 0.1);
-    border: 2px solid rgba(2, 102, 255, 0.4);
-    backdrop-filter: blur(8px);
-    }
-    .typing-indicator {
-    display: inline-flex;
-    align-items: center;
-    padding: 0.5rem 1rem;
-    background-color: #f3f4f6;
-    border-radius: 1rem;
-    margin-bottom: 1rem;
-    animation: floatAnimation 2s ease-in-out infinite;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    }
-    .typing-indicator.visible {
-    opacity: 1;
-    }
-    @keyframes floatAnimation {
-    0%, 100% {
-    transform: translateY(0);
-    }
-    50% {
-    transform: translateY(-5px);
-    }
-    }
-    .dot {
-    width: 8px;
-    height: 8px;
-    background-color: #9ca3af;
-    border-radius: 50%;
-    margin: 0 2px;
-    display: inline-block;
-    }
-    .dot:nth-child(1) {
-    animation: bounce 1s infinite 0s;
-    }
-    .dot:nth-child(2) {
-    animation: bounce 1s infinite 0.2s;
-    }
-    .dot:nth-child(3) {
-    animation: bounce 1s infinite 0.4s;
-    }
-    @keyframes bounce {
-    0%, 100% {
-    transform: translateY(0);
-    }
-    50% {
-    transform: translateY(-5px);
-    }
-    }
-    .chat-input {
-    border: none;
-    outline: none;
-    flex-grow: 1;
-    padding: 0.75rem 1rem;
-    font-size: 1rem;
-    background-color: transparent;
-    color: white;
-    }
-    .chat-input::placeholder {
-    color: rgba(255, 255, 255, 0.6);
-    }
-    .input-container {
-    display: flex;
-    align-items: center;
-    background: var(--glass-bg);
-    border-radius: 1.5rem;
-    padding: 0.25rem;
-    margin: 0 1rem 1rem;
-    transition: all 0.3s ease;
-    border: 1px solid var(--glass-border);
-    backdrop-filter: var(--glass-blur);
-    -webkit-backdrop-filter: var(--glass-blur);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    }
-    .input-container:focus-within {
-    box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.3);
-    }
-    .send-button {
-    background: linear-gradient(135deg, #0266FF, #8400b6);
-    color: white;
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: transform 0.2s ease, background-color 0.2s ease;
-    border: 1px solid rgba(2, 102, 255, 0.4);
-    backdrop-filter: blur(8px);
-    }
-    .send-button:hover {
-    transform: scale(1.05);
-    background-color: #4338ca;
-    }
-    .send-button:active {
-    transform: scale(0.95);
-    }
-    .action-button {
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    color: #6b7280;
-    transition: background-color 0.2s ease, color 0.2s ease;
-    }
-    .action-button:hover {
-    background-color: #e5e7eb;
-    color: #4b5563;
-    }
-    .status-indicator {
-    width: 10px;
-    height: 10px;
-    background-color: #0266FF;
-    border-radius: 50%;
-    display: inline-block;
-    margin-right: 0.5rem;
-    position: relative;
-    box-shadow: 0 0 10px rgba(2, 102, 255, 0.5);
-    }
-    .status-indicator::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #4F46E5;
-    border-radius: 50%;
-    animation: pulse 2s infinite;
-    opacity: 0.5;
-    }
-    @keyframes pulse {
-    0% {
-    transform: scale(1);
-    opacity: 0.5;
-    }
-    70% {
-    transform: scale(2);
-    opacity: 0;
-    }
-    100% {
-    transform: scale(1);
-    opacity: 0;
-    }
-    }
-    .avatar {
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50%;
-    overflow: hidden;
-    background: rgba(79, 70, 229, 0.2);
-    border: 2px solid rgba(79, 70, 229, 0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    color: white;
-    margin-right: 1rem;
-    box-shadow: 0 0 15px rgba(79, 70, 229, 0.3);
-    }
-    .header {
-    display: flex;
-    align-items: center;
-    padding: 1rem;
-    border-bottom: 1px solid var(--glass-border);
-    background: var(--glass-bg);
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    backdrop-filter: var(--glass-blur);
-    -webkit-backdrop-filter: var(--glass-blur);
-    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
-    }
-    .bot-info {
-    flex-grow: 1;
-    }
-    .bot-name {
-    font-weight: 600;
-    font-size: 1.125rem;
-    color: white;
-    text-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
-    }
-    .bot-status {
-    font-size: 0.875rem;
-    color: rgba(255, 255, 255, 0.8);
-    display: flex;
-    align-items: center;
-    }
-    .message-time {
-    font-size: 0.75rem;
-    margin-top: 0.25rem;
-    opacity: 0.7;
-    }
-    .message-user .message-time {
-    text-align: right;
-    color: rgba(255, 255, 255, 0.8);
-    }
-    .message-bot .message-time {
-    text-align: left;
-    color: #6b7280;
-    }
-    .success-animation {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(16, 185, 129, 0.2);
-    color: #10b981;
-    padding: 1rem 2rem;
-    border-radius: 0.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-    }
-    .success-animation.visible {
-    opacity: 1;
-    animation: fadeInOut 1.5s ease forwards;
-    }
-    @keyframes fadeInOut {
-    0% {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0.9);
-    }
-    20% {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-    }
-    80% {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-    }
-    100% {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0.9);
-    }
-    }
-    @media (prefers-reduced-motion: reduce) {
-    .message, .typing-indicator, .status-indicator::after, .dot {
-    animation: none !important;
-    transition: opacity 0.3s ease !important;
-    }
-    .message-content:hover {
-    transform: none !important;
-    }
-    .send-button:hover, .send-button:active {
-    transform: none !important;
-    }
-    }
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            height: 100vh;
+            overflow: hidden;
+            /* background: linear-gradient(135deg, #1a0b24, #0d0521); */
+            color: white;
+        }
+
+        .chat-container {
+            /* max-width: 1200px; */
+            max-width: relative;
+            height: 100vh;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            /* background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2),
+            inset 0 0 2px rgba(255, 255, 255, 0.1); */
+        }
+
+        .message-container {
+            overflow-y: auto;
+            padding: 1.5rem;
+            flex-grow: 1;
+            scroll-behavior: smooth;
+        }
+
+        .message {
+            max-width: 70%;
+            margin-bottom: 1rem;
+            animation-duration: 0.3s;
+            animation-timing-function: ease-out;
+            animation-fill-mode: both;
+            transform-origin: bottom;
+            opacity: 0;
+        }
+
+        .message-user {
+            margin-left: auto;
+            animation-name: messageInUser;
+        }
+
+        .message-bot {
+            margin-right: auto;
+            animation-name: messageInBot;
+        }
+
+        @keyframes messageInUser {
+            from {
+                opacity: 0;
+                transform: translateY(20px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes messageInBot {
+            from {
+                opacity: 0;
+                transform: translateY(20px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .message-content {
+            padding: 0.75rem 1rem;
+            border-radius: 1rem;
+            transition: all 0.3s ease;
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            border: 2px solid rgba(167, 139, 250, 0.5);
+            box-shadow: inset 0 0 4px rgba(167, 139, 250, 0.4), 0 0 15px rgba(99, 102, 241, 0.3), 0 0 30px rgba(99, 102, 241, 0.1);
+        }
+
+        .message-content:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 15px rgba(79, 70, 229, 0.2);
+        }
+
+        .message-user .message-content {
+            /* background: rgba(2, 102, 255, 0.25); */
+            color: white;
+            border-bottom-right-radius: 0.25rem;
+            box-shadow: 0 4px 20px rgba(2, 102, 255, 0.3), 0 0 40px rgba(2, 102, 255, 0.1);
+            border: 2px solid rgba(2, 102, 255, 0.4);
+            backdrop-filter: blur(8px);
+        }
+
+        .message-bot .message-content {
+            /* background: rgba(132, 0, 182, 0.2); */
+            color: white;
+            border-bottom-left-radius: 0.25rem;
+            box-shadow: 0 4px 20px rgba(132, 0, 182, 0.25),
+            0 0 40px rgba(132, 0, 182, 0.1);
+            border: 2px solid rgba(2, 102, 255, 0.4);
+            backdrop-filter: blur(8px);
+        }
+
+        .typing-indicator {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            background-color: #f3f4f6;
+            border-radius: 1rem;
+            margin-bottom: 1rem;
+            animation: floatAnimation 2s ease-in-out infinite;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .typing-indicator.visible {
+            opacity: 1;
+        }
+
+        @keyframes floatAnimation {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            background-color: #9ca3af;
+            border-radius: 50%;
+            margin: 0 2px;
+            display: inline-block;
+        }
+
+        .dot:nth-child(1) {
+            animation: bounce 1s infinite 0s;
+        }
+
+        .dot:nth-child(2) {
+            animation: bounce 1s infinite 0.2s;
+        }
+
+        .dot:nth-child(3) {
+            animation: bounce 1s infinite 0.4s;
+        }
+        
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+
+        .chat-input {
+            border: none;
+            outline: none;
+            flex-grow: 1;
+            padding: 0.75rem 1rem;
+            font-size: 1rem;
+            background-color: transparent;
+            color: white;
+        }
+
+        .chat-input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .input-container {
+            display: flex;
+            align-items: center;
+            background: var(--glass-bg);
+            border-radius: 1.5rem;
+            padding: 0.25rem;
+            margin: 0 1rem 1rem;
+            transition: all 0.3s ease;
+            border: 1px solid var(--glass-border);
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .input-container:focus-within {
+            box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.3);
+        }
+
+        .send-button{
+            background: linear-gradient(135deg, #0266FF, #8400b6);
+            color: white;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+            border: 1px solid rgba(2, 102, 255, 0.4);
+            backdrop-filter: blur(8px);
+        }
+
+        .send-button:hover {
+            transform: scale(1.05);
+            background-color: #4338ca;
+        }
+
+        .send-button:active {
+            transform: scale(0.95);
+        }
+
+        .action-button {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: #6b7280;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        .action-button:hover {
+            background-color: #e5e7eb;
+            color: #4b5563;
+        }
+
+        .status-indicator {
+            width: 10px;
+            height: 10px;
+            background-color: #0266FF;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 0.5rem;
+            position: relative;
+            box-shadow: 0 0 10px rgba(2, 102, 255, 0.5);
+        }
+
+        .status-indicator::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #4F46E5;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+            opacity: 0.5;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+            70% {
+                transform: scale(2);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 0;
+            }
+        }
+
+        .avatar {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            overflow: hidden;
+            background: rgba(79, 70, 229, 0.2);
+            border: 2px solid rgba(79, 70, 229, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            margin-right: 1rem;
+            box-shadow: 0 0 15px rgba(79, 70, 229, 0.3);
+
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            border-bottom: 1px solid var(--glass-border);
+            background: var(--glass-bg);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .bot-info {
+            flex-grow: 1;
+        }
+
+        .bot-name {
+            font-weight: 600;
+            font-size: 1.125rem;
+            color: white;
+            text-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+        }
+
+        .bot-status {
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.8);
+            display: flex;
+            align-items: center;
+        }
+
+        .message-time {
+            font-size: 0.75rem;
+            margin-top: 0.25rem;
+            opacity: 0.7;
+        }
+
+        .message-user .message-time {
+            text-align: right;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .message-bot .message-time {
+            text-align: left;
+            color: #6b7280;
+        }
+
+        .success-animation {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(16, 185, 129, 0.2);
+            color: #10b981;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .success-animation.visible {
+            opacity: 1;
+            animation: fadeInOut 1.5s ease forwards;
+        }
+
+        @keyframes fadeInOut {
+            0% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.9);
+            }
+            20% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
+            80% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.9);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .message, .typing-indicator, .status-indicator::after, .dot {
+                animation: none !important;
+                transition: opacity 0.3s ease !important;
+            }
+            .message-content:hover {
+                transform: none !important;
+            }
+            .send-button:hover, .send-button:active {
+                transform: none !important;
+            }
+        }
     </style>
 </head>
+
 <body>
     <div id="particles-js"></div>
     <canvas id="matrixCanvas" class="matrix-bg"></canvas>
     <div class="chat-container futuristic-border">
+
     <div class="header">
-        <div
-        class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 cursor-pointer hover:bg-gray-200 mr-4"
-        >
+        <div class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 cursor-pointer hover:bg-gray-200 mr-4" >
         <i class="ri-arrow-left-s-line ri-lg"></i>
         </div>
         <div class="avatar">
@@ -516,9 +547,8 @@
         </div>
         </div>
         <div
-        class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 cursor-pointer hover:bg-gray-200"
-        >
-        <i class="ri-more-2-line ri-lg"></i>
+            class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 cursor-pointer hover:bg-gray-200">
+            <i class="ri-more-2-line ri-lg"></i>
         </div>
     </div>
     <div id="messageContainer" class="message-container">
@@ -589,161 +619,169 @@
     <i class="ri-check-line ri-lg mr-2"></i>
     Message sent
     </div>
+
     <script id="chatFunctionality">
-    document.addEventListener("DOMContentLoaded", function () {
-        const messageContainer = document.getElementById("messageContainer");
-        const chatInput = document.getElementById("chatInput");
-        const sendButton = document.getElementById("sendButton");
-        const typingIndicator = document.getElementById("typingIndicator");
-        const successAnimation = document.getElementById("successAnimation");
-        // Initial animation for existing messages
-        const messages = document.querySelectorAll(".message");
-        messages.forEach((message, index) => {
-        setTimeout(() => {
-            message.style.opacity = "1";
-            message.style.transform = "translateY(0) scale(1)";
-        }, index * 300);
-        });
-        // Scroll to bottom initially
-        setTimeout(() => {
-        messageContainer.scrollTop = messageContainer.scrollHeight;
-        }, messages.length * 300);
-        // Show typing indicator after a delay
-        setTimeout(
-        () => {
-            showTypingIndicator();
-            // After "typing", show the response
+        document.addEventListener("DOMContentLoaded", function () {
+            const messageContainer = document.getElementById("messageContainer");
+            const chatInput = document.getElementById("chatInput");
+            const sendButton = document.getElementById("sendButton");
+            const typingIndicator = document.getElementById("typingIndicator");
+            const successAnimation = document.getElementById("successAnimation");
+            // Initial animation for existing messages
+            const messages = document.querySelectorAll(".message");
+            messages.forEach((message, index) => {
+                setTimeout(() => {
+                    message.style.opacity = "1";
+                    message.style.transform = "translateY(0) scale(1)";
+                }, index * 300);
+            });
+
+            // Scroll to bottom initially
             setTimeout(() => {
-            hideTypingIndicator();
-            addBotMessage(
-                "Solar energy has seen significant advancements recently! Perovskite solar cells are reaching efficiency levels over 25%, while bifacial panels that capture sunlight from both sides are becoming more common. There's also exciting progress in solar storage solutions and integrated solar roofing materials that look like traditional shingles.",
-            );
-            }, 3000);
-        },
-        messages.length * 300 + 1000,
-        );
-        function addUserMessage(text) {
-        const now = new Date();
-        const timeString = now.toLocaleTimeString([], {
-            hour: "2-digit",
-            minute: "2-digit",
-        });
-        const messageDiv = document.createElement("div");
-        messageDiv.className = "message message-user";
-        messageDiv.innerHTML = `
-    <div class="message-content">
-    <p>${text}</p>
-    <div class="message-time">${timeString}</div>
-    </div>
-    `;
-        messageContainer.appendChild(messageDiv);
-        // Trigger animation
-        setTimeout(() => {
-            messageDiv.style.opacity = "1";
-            messageDiv.style.transform = "translateY(0) scale(1)";
-        }, 10);
-        // Scroll to new message
-        messageContainer.scrollTop = messageContainer.scrollHeight;
-        // Show success animation
-        successAnimation.classList.add("visible");
-        setTimeout(() => {
-            successAnimation.classList.remove("visible");
-        }, 1500);
-        return messageDiv;
-        }
-        function addBotMessage(text) {
-        const now = new Date();
-        const timeString = now.toLocaleTimeString([], {
-            hour: "2-digit",
-            minute: "2-digit",
-        });
-        const messageDiv = document.createElement("div");
-        messageDiv.className = "message message-bot";
-        messageDiv.innerHTML = `
-    <div class="message-content">
-    <p>${text}</p>
-    <div class="message-time">${timeString}</div>
-    </div>
-    `;
-        messageContainer.appendChild(messageDiv);
-        // Trigger animation
-        setTimeout(() => {
-            messageDiv.style.opacity = "1";
-            messageDiv.style.transform = "translateY(0) scale(1)";
-        }, 10);
-        // Scroll to new message
-        messageContainer.scrollTop = messageContainer.scrollHeight;
-        return messageDiv;
-        }
-        function showTypingIndicator() {
-        typingIndicator.classList.add("visible");
-        messageContainer.scrollTop = messageContainer.scrollHeight;
-        }
-        function hideTypingIndicator() {
-        typingIndicator.classList.remove("visible");
-        }
-        function handleUserInput() {
-        const text = chatInput.value.trim();
-        if (text) {
-            addUserMessage(text);
-            chatInput.value = "";
-            // Show typing indicator after user sends message
-            setTimeout(() => {
-            showTypingIndicator();
-            // Simulate bot response after "typing"
+                messageContainer.scrollTop = messageContainer.scrollHeight;
+            }, messages.length * 300);
+
+            // Show typing indicator after a delay
             setTimeout(
                 () => {
-                hideTypingIndicator();
-                // Different responses based on user input
-                if (text.toLowerCase().includes("thank")) {
-                    addBotMessage(
-                    "You're welcome! Is there anything else you'd like to know about renewable energy?",
-                    );
-                } else if (text.toLowerCase().includes("cost")) {
-                    addBotMessage(
-                    "The cost of solar energy has decreased dramatically in the past decade. Since 2010, the cost of solar panels has dropped by more than 70%. Currently, the average cost for residential solar systems ranges from $2.50 to $3.50 per watt before incentives, making the total cost for a typical 6kW system between $15,000-$21,000 before tax credits and incentives.",
-                    );
-                } else if (text.toLowerCase().includes("efficiency")) {
-                    addBotMessage(
-                    "Modern commercial solar panels typically have efficiency ratings between 15-22%. The most advanced panels in laboratories have reached over 47% efficiency, though these aren't yet commercially available. Monocrystalline panels generally offer the highest efficiency rates, while thin-film technology trades some efficiency for flexibility and lower production costs.",
-                    );
-                } else {
-                    addBotMessage(
-                    "That's an interesting point about solar energy! Would you like to know more about installation processes, government incentives, or how solar compares to other renewable sources?",
-                    );
-                }
+                        showTypingIndicator();
+                        // After "typing", show the response
+                        setTimeout(() => {
+                        hideTypingIndicator();
+                        addBotMessage(
+                            "Solar energy has seen significant advancements recently! Perovskite solar cells are reaching efficiency levels over 25%, while bifacial panels that capture sunlight from both sides are becoming more common. There's also exciting progress in solar storage solutions and integrated solar roofing materials that look like traditional shingles.",
+                        );
+                        }, 3000);
                 },
-                2000 + Math.random() * 1000,
+                messages.length * 300 + 1000,
             );
-            }, 500);
-        }
-        }
-        // Event listeners
-        sendButton.addEventListener("click", handleUserInput);
-        chatInput.addEventListener("keypress", function (e) {
-        if (e.key === "Enter") {
-            handleUserInput();
-        }
+
+            function addUserMessage(text) {
+                const now = new Date();
+                const timeString = now.toLocaleTimeString([], {
+                    hour: "2-digit",
+                    minute: "2-digit",
+                });
+                const messageDiv = document.createElement("div");
+                messageDiv.className = "message message-user";
+                messageDiv.innerHTML = `<div class="message-content">
+                    <p>${text}</p>
+                    <div class="message-time">${timeString}</div>
+                    </div>
+                    `;
+
+                messageContainer.appendChild(messageDiv);
+
+                // Trigger animation
+                setTimeout(() => {
+                    messageDiv.style.opacity = "1";
+                    messageDiv.style.transform = "translateY(0) scale(1)";
+                }, 10);
+
+                // Scroll to new message
+                messageContainer.scrollTop = messageContainer.scrollHeight;
+
+                // Show success animation
+                successAnimation.classList.add("visible");
+                setTimeout(() => {
+                    successAnimation.classList.remove("visible");
+                }, 1500);
+                return messageDiv;
+            }
+
+            function addBotMessage(text) {
+                const now = new Date();
+                const timeString = now.toLocaleTimeString([], {
+                    hour: "2-digit",
+                    minute: "2-digit",
+                });
+                const messageDiv = document.createElement("div");
+                messageDiv.className = "message message-bot";
+                messageDiv.innerHTML = `<div class="message-content">
+                    <p>${text}</p>
+                    <div class="message-time">${timeString}</div>
+                    </div>
+                    `;
+
+                messageContainer.appendChild(messageDiv);
+
+                // Trigger animation
+                setTimeout(() => {
+                    messageDiv.style.opacity = "1";
+                    messageDiv.style.transform = "translateY(0) scale(1)";
+                }, 10);
+
+                // Scroll to new message
+                messageContainer.scrollTop = messageContainer.scrollHeight;
+                return messageDiv;
+            }
+
+            function showTypingIndicator() {
+                typingIndicator.classList.add("visible");
+                messageContainer.scrollTop = messageContainer.scrollHeight;
+            }
+
+            function hideTypingIndicator() {
+                typingIndicator.classList.remove("visible");
+            }
+
+            function handleUserInput() {
+                const text = chatInput.value.trim();
+                if (text) {
+                    addUserMessage(text);
+                    chatInput.value = "";
+                    // Show typing indicator after user sends message
+                    setTimeout(() => {
+                        showTypingIndicator();
+                        // Simulate bot response after "typing"
+                        setTimeout(
+                            () => {
+                                hideTypingIndicator();
+                                // Different responses based on user input
+                                if (text.toLowerCase().includes("thank")) {
+                                    addBotMessage("You're welcome! Is there anything else you'd like to know about renewable energy?",);
+                                } else if (text.toLowerCase().includes("cost")) {
+                                    addBotMessage("The cost of solar energy has decreased dramatically in the past decade. Since 2010, the cost of solar panels has dropped by more than 70%. Currently, the average cost for residential solar systems ranges from $2.50 to $3.50 per watt before incentives, making the total cost for a typical 6kW system between $15,000-$21,000 before tax credits and incentives.",);
+                                } else if (text.toLowerCase().includes("efficiency")) {
+                                    addBotMessage("Modern commercial solar panels typically have efficiency ratings between 15-22%. The most advanced panels in laboratories have reached over 47% efficiency, though these aren't yet commercially available. Monocrystalline panels generally offer the highest efficiency rates, while thin-film technology trades some efficiency for flexibility and lower production costs.",);
+                                } else {
+                                    addBotMessage("That's an interesting point about solar energy! Would you like to know more about installation processes, government incentives, or how solar compares to other renewable sources?",);
+                                }
+                            },
+                            2000 + Math.random() * 1000,
+                        );
+                    }, 500);
+                }
+            }
+
+            // Event listeners
+            sendButton.addEventListener("click", handleUserInput);
+            chatInput.addEventListener("keypress", function (e) {
+                if (e.key === "Enter") {
+                    handleUserInput();
+                }
+            });
+            // Focus input on page load
+            chatInput.focus();
         });
-        // Focus input on page load
-        chatInput.focus();
-    });
     </script>
+
     <script id="chatResponses">
-    document.addEventListener("DOMContentLoaded", function () {
-        // Predefined responses for demo purposes
-        const responses = [
-        "Solar panels work by converting sunlight directly into electricity through the photovoltaic effect. When photons from sunlight hit the semiconductor material in solar cells, they knock electrons loose, generating an electric current.",
-        "The average payback period for residential solar systems ranges from 7-12 years, depending on your location, electricity rates, and available incentives. After that, you're essentially getting free electricity for the remaining life of the system (typically 25-30+ years).",
-        "Yes, solar energy systems can work in cloudy or cold climates! Germany, which isn't known for sunny weather, has been a world leader in solar adoption. While cloud cover reduces efficiency, modern panels can still generate significant power on overcast days.",
-        "Battery storage solutions like the Tesla Powerwall or LG Chem RESU allow you to store excess solar energy for use during nighttime or outages. These systems have become more affordable and efficient in recent years, making 24/7 solar power increasingly practical.",
-        "Community solar programs allow people to subscribe to a portion of a larger solar array, making solar accessible to renters or those with unsuitable roofs. This is becoming increasingly popular in urban areas and apartment-heavy regions.",
-        ];
-        // These would be triggered by specific user inputs in a real implementation
-    });
+        document.addEventListener("DOMContentLoaded", function () {
+            // Predefined responses for demo purposes
+            const responses = [
+            "Solar panels work by converting sunlight directly into electricity through the photovoltaic effect. When photons from sunlight hit the semiconductor material in solar cells, they knock electrons loose, generating an electric current.",
+            "The average payback period for residential solar systems ranges from 7-12 years, depending on your location, electricity rates, and available incentives. After that, you're essentially getting free electricity for the remaining life of the system (typically 25-30+ years).",
+            "Yes, solar energy systems can work in cloudy or cold climates! Germany, which isn't known for sunny weather, has been a world leader in solar adoption. While cloud cover reduces efficiency, modern panels can still generate significant power on overcast days.",
+            "Battery storage solutions like the Tesla Powerwall or LG Chem RESU allow you to store excess solar energy for use during nighttime or outages. These systems have become more affordable and efficient in recent years, making 24/7 solar power increasingly practical.",
+            "Community solar programs allow people to subscribe to a portion of a larger solar array, making solar accessible to renters or those with unsuitable roofs. This is becoming increasingly popular in urban areas and apartment-heavy regions.",
+            ];
+            // These would be triggered by specific user inputs in a real implementation
+        });
     </script>
+
     <script>
-    document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function () {
         // Matrix Rain Effect
         const canvas = document.getElementById("matrixCanvas");
         const ctx = canvas.getContext("2d");
@@ -757,80 +795,84 @@
         const fontSize = 16;
         const columns = canvas.width / fontSize;
         const rainDrops = [];
+
         for (let x = 0; x < columns; x++) {
-        rainDrops[x] = 1;
+            rainDrops[x] = 1;
         }
+
         const draw = () => {
-        ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-        ctx.fillStyle = "#4F46E5";
-        ctx.font = fontSize + "px monospace";
-        for (let i = 0; i < rainDrops.length; i++) {
-            const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
-            ctx.fillText(text, i * fontSize, rainDrops[i] * fontSize);
-            if (rainDrops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-            rainDrops[i] = 0;
+            ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = "#4F46E5";
+            ctx.font = fontSize + "px monospace";
+            
+            for (let i = 0; i < rainDrops.length; i++) {
+                const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+                ctx.fillText(text, i * fontSize, rainDrops[i] * fontSize);
+                if (rainDrops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    rainDrops[i] = 0;
+                }
+                rainDrops[i]++;
             }
-            rainDrops[i]++;
-        }
         };
+
         setInterval(draw, 30);
         // Particles.js Configuration
         particlesJS("particles-js", {
-        particles: {
-            number: {
-            value: 50,
-            density: {
-                enable: true,
-                value_area: 800,
+            particles: {
+                number: {
+                    value: 50,
+                    density: {
+                        enable: true,
+                        value_area: 800,
+                    },
+                },
+                color: {
+                    value: "#4F46E5",
+                },
+                shape: {
+                    type: "circle",
+                },
+                opacity: {
+                    value: 0.5,
+                    random: false,
+                },
+                size: {
+                    value: 3,
+                    random: true,
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: "#4F46E5",
+                    opacity: 0.4,
+                    width: 1,
+                },
+                move: {
+                    enable: true,
+                    speed: 2,
+                    direction: "none",
+                    random: false,
+                    straight: false,
+                    out_mode: "out",
+                    bounce: false,
+                },
             },
+            interactivity: {
+                detect_on: "canvas",
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: "repulse",
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: "push",
+                    },
+                    resize: true,
+                },
             },
-            color: {
-            value: "#4F46E5",
-            },
-            shape: {
-            type: "circle",
-            },
-            opacity: {
-            value: 0.5,
-            random: false,
-            },
-            size: {
-            value: 3,
-            random: true,
-            },
-            line_linked: {
-            enable: true,
-            distance: 150,
-            color: "#4F46E5",
-            opacity: 0.4,
-            width: 1,
-            },
-            move: {
-            enable: true,
-            speed: 2,
-            direction: "none",
-            random: false,
-            straight: false,
-            out_mode: "out",
-            bounce: false,
-            },
-        },
-        interactivity: {
-            detect_on: "canvas",
-            events: {
-            onhover: {
-                enable: true,
-                mode: "repulse",
-            },
-            onclick: {
-                enable: true,
-                mode: "push",
-            },
-            resize: true,
-            },
-        },
-        retina_detect: true,
+            retina_detect: true,
         });
     });
     </script>
