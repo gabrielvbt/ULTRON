@@ -8,26 +8,27 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
     <script>
-    tailwind.config = {
-        theme: {
-    extend: {
-            colors: { primary: "#6366F1", secondary: "#A78BFA" },
-            borderRadius: {
-            none: "0px",
-            sm: "4px",
-            DEFAULT: "8px",
-            md: "12px",
-            lg: "16px",
-            xl: "20px",
-            "2xl": "24px",
-            "3xl": "32px",
-            full: "9999px",
-            button: "8px",
-            },
-        },
-        },
-    };
+        tailwind.config = {
+                theme: {
+                    extend: {
+                            colors: { primary: "#6366F1", secondary: "#A78BFA" },
+                            borderRadius: {
+                            none: "0px",
+                            sm: "4px",
+                            DEFAULT: "8px",
+                            md: "12px",
+                            lg: "16px",
+                            xl: "20px",
+                            "2xl": "24px",
+                            "3xl": "32px",
+                            full: "9999px",
+                            button: "8px",
+                            },
+                    },
+                },
+        };
     </script>
+
     <style>
         :root {--glass-bg: rgba(255, 255, 255, 0.05);
             --glass-border: rgba(255, 255, 255, 0.1);
@@ -38,6 +39,7 @@
             0 0 20px var(--neon-primary),
             0 0 30px var(--neon-primary);
         }
+
         #particles-js{
             position: fixed;
             top: 0;
@@ -46,10 +48,12 @@
             height: 100%;
             z-index: -1;
         }
+
         .futuristic-border {
             position: relative;
             overflow: hidden;
         }
+
         .futuristic-border::before {
             content: '';
             /* position: absolute; */
